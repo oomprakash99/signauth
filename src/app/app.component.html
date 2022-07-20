@@ -1,11 +1,16 @@
 <div class="container" style="max-width: 550px">
   <div >
     <div>
-      <!-- <asl-google-signin-button></asl-google-signin-button> -->
-<button type="submit" (click)="loginWithGoogle()" class="btn btn-primary">Log In</button>
+      <asl-google-signin-button data-onsuccess=""></asl-google-signin-button>
+<!-- <button type="submit" (click)="loginWithGoogle()" class="btn btn-primary">Log In</button>
     </div>
+  </div> -->
+  <div class="g-signin2" data-onsuccess="onSignIn" >
+    <button type="button" (click)="loginWithGoogle()" >
+      Login
+    </button>
   </div>
-  <div >
+  <div>
     <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
   </div>
 </div>
