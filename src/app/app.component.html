@@ -1,16 +1,24 @@
-<div class="container" style="max-width: 550px">
-  <div >
-    <div>
-      <asl-google-signin-button data-onsuccess=""></asl-google-signin-button>
-<!-- <button type="submit" (click)="loginWithGoogle()" class="btn btn-primary">Log In</button>
-    </div>
-  </div> -->
-  <div class="g-signin2" data-onsuccess="onSignIn" >
-    <button type="button" (click)="loginWithGoogle()" >
-      Login
-    </button>
-  </div>
+<div id="g_id_onload" class="container" style="max-width: 550px"
+  data-client_id="926487972380-0upkjrk44243nse5kj5o9qk44np5sl65.apps.googleusercontent.com"
+  data-login_uri="http://localhost:4200/dashboard" data-auto_prompt="false">
+  <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+  data-shape="rectangular" data-logo_alignment="left"></div>
   <div>
-    <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
-  </div>
-</div>
+    <div>
+      <div class="g-signin2" data-onsuccess="onSignIn">
+        <button class="g-signin2" type="button" (click)="loginWithGoogle()">
+          Login
+        </button>
+      </div>
+      <asl-google-signin-button></asl-google-signin-button>
+      <div>
+        <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+      </div>
+    </div>
+
+    <!-- <div id="g_id_onload" data-client_id="926487972380-0upkjrk44243nse5kj5o9qk44np5sl65.apps.googleusercontent.com"
+      data-login_uri="http://localhost:4200/dashboard" data-auto_prompt="false" (click)="loginWithGoogle()">
+    </div>
+    <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+      data-shape="rectangular" data-logo_alignment="left">
+    </div> -->

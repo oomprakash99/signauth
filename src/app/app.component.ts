@@ -4,6 +4,7 @@ import {
   GoogleLoginProvider,
   SocialUser,
 } from '@abacritt/angularx-social-login';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit {
   socialUser!: SocialUser;
   isLoggedin?: boolean;
   constructor(
+    private router:Router,
     private socialAuthService: SocialAuthService
   ) {}
   ngOnInit() {
@@ -23,10 +25,13 @@ export class AppComponent implements OnInit {
     });
   
   }
+  
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.router.navigate(['/dashboard']);
   }
   logOut(): void {
     this.socialAuthService.signOut();
   }
+
 }
