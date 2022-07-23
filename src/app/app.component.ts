@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   socialUser!: SocialUser;
   isLoggedin?: boolean;
+
   constructor(
     private router:Router,
     private socialAuthService: SocialAuthService
@@ -34,4 +35,4 @@ export class AppComponent implements OnInit {
     this.socialAuthService.signOut();
   }
 
-}
+  }
