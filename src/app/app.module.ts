@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import {SocialLoginModule, SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,7 +11,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forRoot([]),
     BrowserModule,
-    ReactiveFormsModule,
     SocialLoginModule,
   ],
   providers: [
@@ -23,7 +21,7 @@ import { RouterModule } from '@angular/router';
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('926487972380-0upkjrk44243nse5kj5o9qk44np5sl65.apps.googleusercontent.com'),
+            provider: new GoogleLoginProvider('926487972380-si18k3rgcgp540olnclla0seolq1bcns.apps.googleusercontent.com'),
           },
         ],
       } as SocialAuthServiceConfig,

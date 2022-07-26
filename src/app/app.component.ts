@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  SocialAuthService,
-  GoogleLoginProvider,
-  SocialUser,
-} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider,SocialAuthService, SocialUser} from '@abacritt/angularx-social-login';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -14,10 +10,8 @@ export class AppComponent implements OnInit {
   socialUser!: SocialUser;
   isLoggedin?: boolean;
 
-  constructor(
-    private router:Router,
-    private socialAuthService: SocialAuthService
-  ) {}
+  constructor(private socialAuthService: SocialAuthService,
+    private routes:Router) {}
   ngOnInit() {
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
@@ -27,12 +21,14 @@ export class AppComponent implements OnInit {
   
   }
   
-  loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.router.navigate(['/dashboard']);
-  }
-  logOut(): void {
-    this.socialAuthService.signOut();
-  }
+  
+  // loginWithGoogle(): void {
+  //   this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //   console.log(this.socialUser);
+  // }
 
-  }
+  // logOut(): void {
+  //   this.socialAuthService.signOut();
+  // }
+
+}
