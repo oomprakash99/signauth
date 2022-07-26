@@ -9,14 +9,17 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   socialUser!: SocialUser;
   isLoggedin?: boolean;
+  array = [] as any;
 
   constructor(private socialAuthService: SocialAuthService,
-    private routes:Router) {}
+    public routes:Router) {}
   ngOnInit() {
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       this.isLoggedin = user != null;
       console.log(this.socialUser);
+      this.array.push(this.socialUser);
+      console.log(this.array);
     });
   
   }
@@ -27,8 +30,8 @@ export class AppComponent implements OnInit {
   //   console.log(this.socialUser);
   // }
 
-  // logOut(): void {
-  //   this.socialAuthService.signOut();
-  // }
+  logOut(): void {
+    this.socialAuthService.signOut();
+  }
 
 }
